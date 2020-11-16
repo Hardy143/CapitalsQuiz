@@ -10,23 +10,8 @@ import Combine
 
 class NetworkManager {
     
-    func retrieveDataWithURLSession() {
-        guard let url = URL(string: "https://restcountries.eu/rest/v2/name/ireland?fullText=true") else { return }
-        
-        URLSession.shared.dataTask(with: url) { data, response, error in
-           if let data = data {
-               do {
-                 let country = try JSONDecoder().decode([Country].self, from: data)
-                 print(country[0].capital)
-               } catch let error {
-                  print(error)
-               }
-            }
-        }.resume()
-    }
-    
-    func retrieveDataWithCombine() -> AnyPublisher<[Country], CountryError> {
-        let url = URL(string: "https://restcountries.eu/rest/v2/name/ireland?fullText=true")!
+    static func retrieveDataWithCombine() -> AnyPublisher<[Country], CountryError> {
+        let url = Urls.allCountries
         
         return URLSession.shared.dataTaskPublisher(for: url)
             .tryMap { response -> Data in
@@ -37,10 +22,14 @@ class NetworkManager {
                 }
                 return response.data
             }
-            .decode(type: [Country].self, decoder: JSONDecoder())
+            .decode(type: Countries.self, decoder: JSONDecoder())
             .mapError { CountryError.map($0) }
             .eraseToAnyPublisher()
         
     }
     
+}
+
+struct Urls {
+    static let allCountries = URL(string: "https://restcountries.eu/rest/v2/all")!
 }

@@ -7,17 +7,96 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "EB34F1E1-05BF-4427-9737-2D9A3983D8B3"
+            uuid = "BC2786FF-B44F-4D91-983C-D58141C3A990"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CombineAndSwiftUI/ContentView.swift"
+            filePath = "Views/CapitalRow.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "15"
-            endingLineNumber = "15"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
             landmarkName = "body"
             landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FDC1ACB5-CD4F-4569-840D-1332D2227A1B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ViewModel/CounterViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "updateCount()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "88C950E1-41FF-465D-94EA-DDB2DF17BAA6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ViewModel/CounterViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "init(count:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "88C950E1-41FF-465D-94EA-DDB2DF17BAA6 - 436d8b153a7b7605"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "default argument 0 of CombineAndSwiftUI.CounterViewModel.init(count: Swift.Int) -&gt; CombineAndSwiftUI.CounterViewModel"
+                  moduleName = "CombineAndSwiftUI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Vicki/Documents/Apps/CombineAndSwiftUI/ViewModel/CounterViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "6">
+               </Location>
+               <Location
+                  uuid = "88C950E1-41FF-465D-94EA-DDB2DF17BAA6 - 38c30ca4b1d6fbe3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CombineAndSwiftUI.CounterViewModel.__allocating_init(count: Swift.Int) -&gt; CombineAndSwiftUI.CounterViewModel"
+                  moduleName = "CombineAndSwiftUI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Vicki/Documents/Apps/CombineAndSwiftUI/ViewModel/CounterViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "7">
+               </Location>
+               <Location
+                  uuid = "88C950E1-41FF-465D-94EA-DDB2DF17BAA6 - b4ae33a8466125bd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CombineAndSwiftUI.CounterViewModel.init(count: Swift.Int) -&gt; CombineAndSwiftUI.CounterViewModel"
+                  moduleName = "CombineAndSwiftUI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Vicki/Documents/Apps/CombineAndSwiftUI/ViewModel/CounterViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "34">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

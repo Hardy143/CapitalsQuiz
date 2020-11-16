@@ -8,18 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
-    
-    @ObservedObject var countryViewModel: CountryViewModel
-    
+        
     var body: some View {
-        Text(self.countryViewModel.capital)
-            .padding()
+        GameView(countryViewModel: CountryViewModel(), scoreViewModel: ScoreViewModel(), counterViewModel: CounterViewModel())
+        
     }
     
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(countryViewModel: CountryViewModel())
+        ContentView()
     }
 }
