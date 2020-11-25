@@ -9,7 +9,7 @@ import Foundation
 
 class CounterViewModel: ObservableObject {
     
-    @Published var count: Int
+    @Published var count: Int = 10
     
     init(count: Int = 0) {
         self.count = count
@@ -17,5 +17,15 @@ class CounterViewModel: ObservableObject {
     
     func updateCount() {
         count += 1
+    }
+    
+    func tenSecondTimer() {
+        let timer = Timer.publish(every: 1, on: .main, in: .common)
+            .autoconnect()
+            .sink { _ in
+                if self.count > 0 {
+                    self.count -= 1
+                }
+            }
     }
 }

@@ -24,7 +24,6 @@
 		99D3B85D2562BE2C00DCAA80 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D3B85C2562BE2C00DCAA80 /* GameView.swift */; };
 		99D3B86D2562D76300DCAA80 /* ScoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D3B86C2562D76300DCAA80 /* ScoreViewModel.swift */; };
 		99D3B8752562E5FD00DCAA80 /* CounterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D3B8742562E5FD00DCAA80 /* CounterViewModel.swift */; };
-		99D3B87D2562EE8600DCAA80 /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D3B87C2562EE8600DCAA80 /* TimerViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,7 +80,6 @@
 		99D3B85C2562BE2C00DCAA80 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		99D3B86C2562D76300DCAA80 /* ScoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewModel.swift; sourceTree = "<group>"; };
 		99D3B8742562E5FD00DCAA80 /* CounterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterViewModel.swift; sourceTree = "<group>"; };
-		99D3B87C2562EE8600DCAA80 /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,7 +193,6 @@
 				99D292AA255C53E10017B7CC /* CountryViewModel.swift */,
 				99D3B86C2562D76300DCAA80 /* ScoreViewModel.swift */,
 				99D3B8742562E5FD00DCAA80 /* CounterViewModel.swift */,
-				99D3B87C2562EE8600DCAA80 /* TimerViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -353,7 +350,6 @@
 				99D2929D255C250C0017B7CC /* NetworkManager.swift in Sources */,
 				99D29259255C21D30017B7CC /* AppDelegate.swift in Sources */,
 				99D3B8752562E5FD00DCAA80 /* CounterViewModel.swift in Sources */,
-				99D3B87D2562EE8600DCAA80 /* TimerViewModel.swift in Sources */,
 				99D2925B255C21D30017B7CC /* SceneDelegate.swift in Sources */,
 				99D3B86D2562D76300DCAA80 /* ScoreViewModel.swift in Sources */,
 				99D3B8572562B9C800DCAA80 /* CapitalRow.swift in Sources */,
