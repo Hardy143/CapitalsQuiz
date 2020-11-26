@@ -10,7 +10,6 @@ import SwiftUI
 struct GameView: View {
     
     @ObservedObject var countryViewModel: CountryViewModel
-    @ObservedObject var scoreViewModel: ScoreViewModel
     @ObservedObject var counterViewModel: CounterViewModel
     
     var body: some View {
@@ -21,20 +20,17 @@ struct GameView: View {
         
         VStack {
             List(countryViewModel.capitals) { capital in
-                CapitalRow(capital: capital, countryViewModel: countryViewModel, scoreViewModel: scoreViewModel, counterViewModel: counterViewModel)
+                CapitalRow(capital: capital, countryViewModel: countryViewModel, counterViewModel: counterViewModel)
             }
             .listStyle(InsetListStyle())
             
-            Text("10")
-                .font(.custom("Counter", size: 80))
-                .fontWeight(.bold)
-                .frame(width: 300, height: 300, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+            TimerView()
         }
     }
 }
 
 struct GameView_Previews: PreviewProvider {
     static var previews: some View {
-        GameView(countryViewModel: CountryViewModel(), scoreViewModel: ScoreViewModel(), counterViewModel: CounterViewModel())
+        GameView(countryViewModel: CountryViewModel(), counterViewModel: CounterViewModel())
     }
 }

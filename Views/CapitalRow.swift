@@ -11,7 +11,7 @@ struct CapitalRow: View {
     
     @State var capital: Capital
     @ObservedObject var countryViewModel: CountryViewModel
-    @ObservedObject var scoreViewModel: ScoreViewModel
+    @ObservedObject var scoreViewModel: ScoreViewModel = ScoreViewModel()
     @ObservedObject var counterViewModel: CounterViewModel
     
     var body: some View {
@@ -24,14 +24,15 @@ struct CapitalRow: View {
             self.capital.isChecked = true
             guard let country = countryViewModel.country else { return }
             
-            if counterViewModel.count < 10 {
-                scoreViewModel.updateScore(capital: capital, country: country)
-                counterViewModel.updateCount()
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                    self.countryViewModel.nextQuestion()
-                }
-            } else {
+            guard counterViewModel.gameActive else {
                 print("done")
+                return
+            }
+            
+            scoreViewModel.updateScore(capital: capital, country: country)
+            counterViewModel.updateCount()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                self.countryViewModel.nextQuestion()
             }
             
         }
