@@ -11,8 +11,9 @@ struct CapitalRow: View {
     
     @State var capital: Capital
     @ObservedObject var countryViewModel: CountryViewModel
-    @ObservedObject var scoreViewModel: ScoreViewModel = ScoreViewModel()
-    @ObservedObject var counterViewModel: CounterViewModel
+    @EnvironmentObject var scoreViewModel: ScoreViewModel
+    @EnvironmentObject var counterViewModel: CounterViewModel
+    @State var showScoreView = false
     
     var body: some View {
         HStack{
@@ -24,13 +25,14 @@ struct CapitalRow: View {
             self.capital.isChecked = true
             guard let country = countryViewModel.country else { return }
             
-            guard counterViewModel.gameActive else {
+            scoreViewModel.updateScore(capital: capital, country: country)
+            counterViewModel.updateCount()
+            
+            guard counterViewModel.isGameActive else {
                 print("done")
                 return
             }
-            
-            scoreViewModel.updateScore(capital: capital, country: country)
-            counterViewModel.updateCount()
+        
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 self.countryViewModel.nextQuestion()
             }
@@ -38,11 +40,12 @@ struct CapitalRow: View {
         }
         
         .padding(15)
+        
     }
 }
 
 struct CapitalRow_Previews: PreviewProvider {
     static var previews: some View {
-        CapitalRow(capital: Capital(name: "Dublin", isChecked: false), countryViewModel: CountryViewModel(), scoreViewModel: ScoreViewModel(), counterViewModel: CounterViewModel())
+        CapitalRow(capital: Capital(name: "Dublin", isChecked: false), countryViewModel: CountryViewModel())
     }
 }

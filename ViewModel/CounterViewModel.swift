@@ -9,20 +9,21 @@ import Foundation
 
 class CounterViewModel: ObservableObject {
     
-    @Published var count: Int = 0
-    @Published var gameActive = true
+    @Published private(set) var count: Int
+    @Published private(set) var isGameActive = true
     
-    init(count: Int = 0) {
+    init(count: Int = 1) {
         self.count = count
     }
     
     func updateCount() {
-        guard count < 11 else {
-            gameActive = false
+        guard count < 10 else {
+            isGameActive = false
             return
             
         }
         count += 1
+        print("Count: \(count)")
     }
     
 }

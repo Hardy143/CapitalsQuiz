@@ -9,28 +9,37 @@ import SwiftUI
 
 struct GameView: View {
     
-    @ObservedObject var countryViewModel: CountryViewModel
-    @ObservedObject var counterViewModel: CounterViewModel
+    @ObservedObject var countryViewModel = CountryViewModel()
+    @EnvironmentObject var counterViewModel: CounterViewModel
+    @EnvironmentObject var scoreViewModel: ScoreViewModel
+    @State private var showScoreView = false
     
     var body: some View {
-        Text(self.countryViewModel.country?.name ?? "")
-            .font(.largeTitle)
-            .fontWeight(.bold)
-            .padding()
-        
-        VStack {
-            List(countryViewModel.capitals) { capital in
-                CapitalRow(capital: capital, countryViewModel: countryViewModel, counterViewModel: counterViewModel)
-            }
-            .listStyle(InsetListStyle())
+        NavigationView {
             
-            TimerView()
+            VStack {
+                Text(self.countryViewModel.country?.name ?? "")
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                    .padding()
+                
+                List(countryViewModel.capitals) { capital in
+                    CapitalRow(capital: capital, countryViewModel: countryViewModel)
+                }
+                .listStyle(InsetListStyle())
+                
+            }
+            
         }
+        .navigationBarBackButtonHidden(true)
+
+
     }
+
 }
 
 struct GameView_Previews: PreviewProvider {
     static var previews: some View {
-        GameView(countryViewModel: CountryViewModel(), counterViewModel: CounterViewModel())
+        GameView()
     }
 }

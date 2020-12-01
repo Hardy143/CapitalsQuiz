@@ -9,8 +9,8 @@ import Foundation
 import Combine
 
 class CountryViewModel: ObservableObject {
-    @Published var country: Country?
-    @Published var capitals: [Capital] = []
+    @Published private(set) var country: Country?
+    @Published private(set) var capitals: [Capital] = []
     
     private var allCountries: Countries = []
     var subscriptions: Set<AnyCancellable> = []

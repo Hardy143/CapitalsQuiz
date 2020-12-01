@@ -8,14 +8,20 @@
 import SwiftUI
 
 struct TimerView: View {
-    
-    @ObservedObject var timerViewModel: TimerViewModel = TimerViewModel()
-    
+
+    @EnvironmentObject var countryViewModel: CountryViewModel
+    @EnvironmentObject var counterViewModel: CounterViewModel
+    @State var showScoreView = false
+        
     var body: some View {
-        Text("\(timerViewModel.timer)")
+        Text("10")
             .font(.custom("Counter", size: 80))
             .fontWeight(.bold)
             .frame(width: 300, height: 300, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+
+            .fullScreenCover(isPresented: $showScoreView, content: {
+                ScoreView()
+            })
     }
 }
 

@@ -8,7 +8,7 @@
 import Foundation
 
 class ScoreViewModel: ObservableObject {
-    @Published var finalScore: Int
+    @Published private(set) var finalScore: Int
     private var score = 0
     
     init(score: Int = 0) {
@@ -18,11 +18,7 @@ class ScoreViewModel: ObservableObject {
     func updateScore(capital: Capital, country: Country) {
         guard capital.name == country.capital else { return }
         score += 10
-        print(score)
-    }
-    
-    func calculateFinalScore() {
-        finalScore = score
+        print("Score: \(score)")
     }
     
     func resetScore() {
