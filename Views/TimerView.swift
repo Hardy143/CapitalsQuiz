@@ -9,9 +9,9 @@ import SwiftUI
 
 struct TimerView: View {
 
-    @ObservedObject var countryViewModel: CountryViewModel
+    @EnvironmentObject var countryViewModel: CountryViewModel
     @EnvironmentObject var gameStateController: GameStateController
-    @ObservedObject var timerViewModel: TimerViewModel
+    @EnvironmentObject var timerViewModel: TimerViewModel
         
     var body: some View {
         Text("\(timerViewModel.timer)")
@@ -23,6 +23,9 @@ struct TimerView: View {
                 DispatchQueue.main.async {
                     if time == 0 {
                         self.gameStateController.updateCount()
+                        
+                        guard !gameStateController.isGameFinished else { return }
+                        
                         self.countryViewModel.nextQuestion()
                         self.timerViewModel.startTimer()
                     }
@@ -35,6 +38,6 @@ struct TimerView: View {
 
 struct TimerView_Previews: PreviewProvider {
     static var previews: some View {
-        TimerView(countryViewModel: CountryViewModel(), timerViewModel: TimerViewModel())
+        TimerView()
     }
 }

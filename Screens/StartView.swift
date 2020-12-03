@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct StartView: View {
-
-    @ObservedObject var viewRouter = GameStateController()
     
     var body: some View {
         NavigationView {

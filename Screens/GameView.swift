@@ -9,30 +9,41 @@ import SwiftUI
 
 struct GameView: View {
     
-    @ObservedObject var countryViewModel = CountryViewModel()
-    @ObservedObject var timerViewModel = TimerViewModel()
+    @EnvironmentObject var countryViewModel: CountryViewModel
+    @EnvironmentObject var timerViewModel: TimerViewModel
     @EnvironmentObject var gameStateController: GameStateController
     @EnvironmentObject var scoreViewModel: ScoreViewModel
     
     var body: some View {
-        NavigationView {
             
-            VStack(alignment: .center, spacing: 20) {
-                CountryView(countryViewModel: countryViewModel)
-                
-                List(countryViewModel.capitals) { capital in
-                    CapitalRow(capital: capital, countryViewModel: countryViewModel, timerViewModel: timerViewModel)
-                }
-                .listStyle(InsetListStyle())
-                
-                TimerView(countryViewModel: countryViewModel, timerViewModel: timerViewModel)
-                
+        VStack(alignment: .center, spacing: 20) {
+            CountryView()
+            
+            List(countryViewModel.capitals) { capital in
+                CapitalRow(capital: capital)
             }
             
+            .onTapGesture {
+                gameStateController.updateCount()
+                
+                guard !gameStateController.isGameFinished else { return }
+            
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                    self.countryViewModel.nextQuestion()
+                    self.timerViewModel.startTimer()
+                }
+            }
+            .listStyle(InsetListStyle())
+            
+            TimerView()
+            
+            Spacer()
+            
         }
+
         
         NavigationLink(
-            destination: ScoreView(countryViewModel: countryViewModel),
+            destination: ScoreView(),
             isActive: $gameStateController.isGameFinished) {
             
         }

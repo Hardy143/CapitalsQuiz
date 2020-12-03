@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CountryView: View {
     
-    @ObservedObject var countryViewModel: CountryViewModel
+    @EnvironmentObject var countryViewModel: CountryViewModel
     
     var body: some View {
         Text(self.countryViewModel.country?.name ?? "")
@@ -21,7 +21,7 @@ struct CountryView: View {
 
 struct CountryView_Previews: PreviewProvider {
     static var previews: some View {
-        CountryView(countryViewModel: CountryViewModel())
+        CountryView()
     }
 }
 

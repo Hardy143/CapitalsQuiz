@@ -31,11 +31,6 @@ class TimerViewModel: ObservableObject {
                     return
                 }
 
-//                if self.timer < 1 {
-//                    self.gameTimer?.cancel()
-//                    self.timer = 0
-//                    return
-//                }
                 self.timer -= 1
             }
     }
