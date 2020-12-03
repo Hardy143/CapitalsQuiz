@@ -18,15 +18,14 @@ struct GameView: View {
         NavigationView {
             
             VStack {
-                Text(self.countryViewModel.country?.name ?? "")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                    .padding()
+                CountryView(countryViewModel: countryViewModel)
                 
                 List(countryViewModel.capitals) { capital in
                     CapitalRow(capital: capital, countryViewModel: countryViewModel)
                 }
                 .listStyle(InsetListStyle())
+                
+                TimerView()
                 
             }
             
