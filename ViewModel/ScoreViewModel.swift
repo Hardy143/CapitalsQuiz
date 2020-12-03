@@ -9,9 +9,10 @@ import Foundation
 
 class ScoreViewModel: ObservableObject {
     @Published private(set) var finalScore: Int
-    private var score = 0
+    private var score: Int
     
     init(score: Int = 0) {
+        self.score = score
         self.finalScore = score
     }
     
