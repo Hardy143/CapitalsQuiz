@@ -10,6 +10,7 @@ import SwiftUI
 struct GameView: View {
     
     @ObservedObject var countryViewModel = CountryViewModel()
+    @ObservedObject var timerViewModel = TimerViewModel()
     @EnvironmentObject var gameStateController: GameStateController
     @EnvironmentObject var scoreViewModel: ScoreViewModel
     
@@ -20,11 +21,11 @@ struct GameView: View {
                 CountryView(countryViewModel: countryViewModel)
                 
                 List(countryViewModel.capitals) { capital in
-                    CapitalRow(capital: capital, countryViewModel: countryViewModel)
+                    CapitalRow(capital: capital, countryViewModel: countryViewModel, timerViewModel: timerViewModel)
                 }
                 .listStyle(InsetListStyle())
                 
-                TimerView()
+                TimerView(countryViewModel: countryViewModel, timerViewModel: timerViewModel)
                 
             }
             
@@ -36,6 +37,10 @@ struct GameView: View {
             
         }
         .navigationBarBackButtonHidden(true)
+        
+        .onAppear(perform: {
+            timerViewModel.startTimer()
+        })
 
 
     }

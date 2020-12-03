@@ -11,9 +11,10 @@ struct CapitalRow: View {
     
     @State var capital: Capital
     @ObservedObject var countryViewModel: CountryViewModel
+    @ObservedObject var timerViewModel: TimerViewModel
     @EnvironmentObject var scoreViewModel: ScoreViewModel
     @EnvironmentObject var gameStateController: GameStateController
-    @State var showScoreView = false
+    
     
     var body: some View {
         HStack{
@@ -32,6 +33,7 @@ struct CapitalRow: View {
         
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
                 self.countryViewModel.nextQuestion()
+                self.timerViewModel.startTimer()
             }
             
         }
@@ -43,6 +45,6 @@ struct CapitalRow: View {
 
 struct CapitalRow_Previews: PreviewProvider {
     static var previews: some View {
-        CapitalRow(capital: Capital(name: "Dublin", isChecked: false), countryViewModel: CountryViewModel())
+        CapitalRow(capital: Capital(name: "Dublin", isChecked: false), countryViewModel: CountryViewModel(), timerViewModel: TimerViewModel())
     }
 }

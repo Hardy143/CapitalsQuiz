@@ -21,17 +21,22 @@ class TimerViewModel: ObservableObject {
         gameTimer?.cancel()
         timer = seconds
         
-        gameTimer = Timer.publish(every: 1, on: .main, in: .common)
+        gameTimer = Timer.publish(every: 1, on: .main, in: .default)
             .autoconnect()
             .sink { _ in
-                print("timer!: \(self.timer)")
+                
+                guard self.timer > 0 else {
+                    self.gameTimer?.cancel()
+                    self.timer = 0
+                    return
+                }
+
+//                if self.timer < 1 {
+//                    self.gameTimer?.cancel()
+//                    self.timer = 0
+//                    return
+//                }
                 self.timer -= 1
-
-
             }
-    }
-    
-    func cancelTimer() {
-        gameTimer?.cancel()
     }
 }
