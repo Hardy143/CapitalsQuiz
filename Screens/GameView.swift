@@ -12,7 +12,6 @@ struct GameView: View {
     @ObservedObject var countryViewModel = CountryViewModel()
     @EnvironmentObject var gameStateController: GameStateController
     @EnvironmentObject var scoreViewModel: ScoreViewModel
-    @ObservedObject var viewRouter: GameStateController
     
     var body: some View {
         NavigationView {
@@ -45,6 +44,6 @@ struct GameView: View {
 
 struct GameView_Previews: PreviewProvider {
     static var previews: some View {
-        GameView(viewRouter: GameStateController())
+        GameView()
     }
 }

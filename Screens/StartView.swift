@@ -7,14 +7,13 @@
 
 import SwiftUI
 
-struct PlayGameView: View {
-    
-    @State private var isShowingDetailView = false
+struct StartView: View {
+
     @ObservedObject var viewRouter = GameStateController()
     
     var body: some View {
         NavigationView {
-            NavigationLink(destination: GameView(viewRouter: viewRouter)) {
+            NavigationLink(destination: GameView()) {
                 Text("Play Game")
                     .navigationBarHidden(true)
             }
@@ -26,6 +25,6 @@ struct PlayGameView: View {
 
 struct PlayGameView_Previews: PreviewProvider {
     static var previews: some View {
-        PlayGameView()
+        StartView()
     }
 }
