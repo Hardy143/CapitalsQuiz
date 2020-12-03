@@ -16,7 +16,7 @@ struct TimerView: View {
         Text("10")
             .font(.custom("Counter", size: 80))
             .fontWeight(.bold)
-            .frame(width: 300, height: 300, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+            .padding(EdgeInsets(top: 10, leading: 10, bottom: 50, trailing: 10))
 
     }
 }

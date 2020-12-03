@@ -16,7 +16,7 @@ struct GameView: View {
     var body: some View {
         NavigationView {
             
-            VStack {
+            VStack(alignment: .center, spacing: 20) {
                 CountryView(countryViewModel: countryViewModel)
                 
                 List(countryViewModel.capitals) { capital in

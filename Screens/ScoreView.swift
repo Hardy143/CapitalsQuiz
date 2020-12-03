@@ -24,11 +24,10 @@ struct ScoreView: View {
                     countryViewModel.nextQuestion()
                 }) {
                     Text("Play Again")
-                        .navigationBarHidden(true)
                 }
             }
             
-        }
+        } .navigationBarHidden(true)
         
     }
 }

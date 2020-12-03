@@ -18,6 +18,7 @@ class ScoreViewModel: ObservableObject {
     func updateScore(capital: Capital, country: Country) {
         guard capital.name == country.capital else { return }
         score += 10
+        finalScore = score
         print("Score: \(score)")
     }
     
