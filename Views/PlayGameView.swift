@@ -10,10 +10,11 @@ import SwiftUI
 struct PlayGameView: View {
     
     @State private var isShowingDetailView = false
+    @ObservedObject var viewRouter = GameStateController()
     
     var body: some View {
         NavigationView {
-            NavigationLink(destination: GameView()) {
+            NavigationLink(destination: GameView(viewRouter: viewRouter)) {
                 Text("Play Game")
                     .navigationBarHidden(true)
             }

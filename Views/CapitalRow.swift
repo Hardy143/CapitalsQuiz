@@ -12,7 +12,7 @@ struct CapitalRow: View {
     @State var capital: Capital
     @ObservedObject var countryViewModel: CountryViewModel
     @EnvironmentObject var scoreViewModel: ScoreViewModel
-    @EnvironmentObject var counterViewModel: CounterViewModel
+    @EnvironmentObject var gameStateController: GameStateController
     @State var showScoreView = false
     
     var body: some View {
@@ -26,12 +26,9 @@ struct CapitalRow: View {
             guard let country = countryViewModel.country else { return }
             
             scoreViewModel.updateScore(capital: capital, country: country)
-            counterViewModel.updateCount()
+            gameStateController.updateCount()
             
-            guard counterViewModel.isGameActive else {
-                print("done")
-                return
-            }
+            guard !gameStateController.isGameFinished else { return }
         
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
                 self.countryViewModel.nextQuestion()

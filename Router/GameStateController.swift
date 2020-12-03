@@ -1,16 +1,16 @@
 //
-//  CounterViewModel.swift
+//  ViewRouter.swift
 //  CombineAndSwiftUI
 //
-//  Created by Vicki Larkin on 16/11/2020.
+//  Created by Vicki Larkin on 03/12/2020.
 //
 
 import Foundation
 
-class CounterViewModel: ObservableObject {
+class GameStateController: ObservableObject {
     
     @Published private(set) var count: Int
-    @Published private(set) var isGameActive = true
+    @Published var isGameFinished = false
     
     init(count: Int = 1) {
         self.count = count
@@ -18,7 +18,7 @@ class CounterViewModel: ObservableObject {
     
     func updateCount() {
         guard count < 10 else {
-            isGameActive = false
+            isGameFinished = true
             return
             
         }
@@ -26,4 +26,8 @@ class CounterViewModel: ObservableObject {
         print("Count: \(count)")
     }
     
+    func resetGame() {
+        count = 1
+        isGameFinished = false
+    }
 }

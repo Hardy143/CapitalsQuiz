@@ -13,7 +13,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
     
    // var countryViewModel = CountryViewModel()
-    var counterViewModel = CounterViewModel()
+    var gameStateController = GameStateController()
     var scoreViewModel = ScoreViewModel()
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -24,7 +24,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Create the SwiftUI view that provides the window contents.
         let contentView = ContentView()
           //  .environmentObject(countryViewModel)
-            .environmentObject(counterViewModel)
+            .environmentObject(gameStateController)
             .environmentObject(scoreViewModel)
 
         // Use a UIHostingController as window root view controller.

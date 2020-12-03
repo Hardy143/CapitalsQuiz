@@ -10,4 +10,13 @@ import Foundation
 enum GameState {
     case active
     case inactive
+
+    var description: Bool {
+        switch self {
+        case .active:
+            return true
+        default:
+            return false
+        }
+    }
 }

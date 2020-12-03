@@ -10,8 +10,7 @@ import SwiftUI
 struct TimerView: View {
 
     @EnvironmentObject var countryViewModel: CountryViewModel
-    @EnvironmentObject var counterViewModel: CounterViewModel
-    @State var showScoreView = false
+    @EnvironmentObject var gameStateController: GameStateController
         
     var body: some View {
         Text("10")
@@ -19,9 +18,6 @@ struct TimerView: View {
             .fontWeight(.bold)
             .frame(width: 300, height: 300, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
 
-            .fullScreenCover(isPresented: $showScoreView, content: {
-                ScoreView()
-            })
     }
 }
 

@@ -13,6 +13,7 @@
 		9964B0932576798800017545 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9964B0922576798800017545 /* GameState.swift */; };
 		9964B09725767AC200017545 /* PlayGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9964B09625767AC200017545 /* PlayGameView.swift */; };
 		99B0D9CF2579066D009952EB /* CountryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B0D9CE2579066D009952EB /* CountryView.swift */; };
+		99B0D9D625790ACB009952EB /* GameStateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B0D9D525790ACB009952EB /* GameStateController.swift */; };
 		99D29259255C21D30017B7CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D29258255C21D30017B7CC /* AppDelegate.swift */; };
 		99D2925B255C21D30017B7CC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D2925A255C21D30017B7CC /* SceneDelegate.swift */; };
 		99D2925D255C21D30017B7CC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D2925C255C21D30017B7CC /* ContentView.swift */; };
@@ -29,7 +30,6 @@
 		99D3B8572562B9C800DCAA80 /* CapitalRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D3B8562562B9C800DCAA80 /* CapitalRow.swift */; };
 		99D3B85D2562BE2C00DCAA80 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D3B85C2562BE2C00DCAA80 /* GameView.swift */; };
 		99D3B86D2562D76300DCAA80 /* ScoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D3B86C2562D76300DCAA80 /* ScoreViewModel.swift */; };
-		99D3B8752562E5FD00DCAA80 /* CounterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D3B8742562E5FD00DCAA80 /* CounterViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +69,7 @@
 		9964B0922576798800017545 /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
 		9964B09625767AC200017545 /* PlayGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayGameView.swift; sourceTree = "<group>"; };
 		99B0D9CE2579066D009952EB /* CountryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryView.swift; sourceTree = "<group>"; };
+		99B0D9D525790ACB009952EB /* GameStateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStateController.swift; sourceTree = "<group>"; };
 		99D29255255C21D30017B7CC /* CombineAndSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CombineAndSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99D29258255C21D30017B7CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		99D2925A255C21D30017B7CC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -91,7 +92,6 @@
 		99D3B8562562B9C800DCAA80 /* CapitalRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapitalRow.swift; sourceTree = "<group>"; };
 		99D3B85C2562BE2C00DCAA80 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		99D3B86C2562D76300DCAA80 /* ScoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewModel.swift; sourceTree = "<group>"; };
-		99D3B8742562E5FD00DCAA80 /* CounterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,9 +127,18 @@
 			path = Enums;
 			sourceTree = "<group>";
 		};
+		99B0D9D425790AB7009952EB /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				99B0D9D525790ACB009952EB /* GameStateController.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
 		99D2924C255C21D30017B7CC = {
 			isa = PBXGroup;
 			children = (
+				99B0D9D425790AB7009952EB /* Router */,
 				9964B0912576797600017545 /* Enums */,
 				99D3B8552562B9AE00DCAA80 /* Views */,
 				99D292B0255C5DD00017B7CC /* Model */,
@@ -213,7 +222,6 @@
 			children = (
 				99D292AA255C53E10017B7CC /* CountryViewModel.swift */,
 				99D3B86C2562D76300DCAA80 /* ScoreViewModel.swift */,
-				99D3B8742562E5FD00DCAA80 /* CounterViewModel.swift */,
 				990A23BF2570378200B12628 /* TimerViewModel.swift */,
 			);
 			path = ViewModel;
@@ -378,12 +386,12 @@
 				99D2929D255C250C0017B7CC /* NetworkManager.swift in Sources */,
 				99B0D9CF2579066D009952EB /* CountryView.swift in Sources */,
 				99D29259255C21D30017B7CC /* AppDelegate.swift in Sources */,
-				99D3B8752562E5FD00DCAA80 /* CounterViewModel.swift in Sources */,
 				990A23C02570378200B12628 /* TimerViewModel.swift in Sources */,
 				9964B0932576798800017545 /* GameState.swift in Sources */,
 				99D2925B255C21D30017B7CC /* SceneDelegate.swift in Sources */,
 				99D3B86D2562D76300DCAA80 /* ScoreViewModel.swift in Sources */,
 				99D3B8572562B9C800DCAA80 /* CapitalRow.swift in Sources */,
+				99B0D9D625790ACB009952EB /* GameStateController.swift in Sources */,
 				99D3B85D2562BE2C00DCAA80 /* GameView.swift in Sources */,
 				99D292A1255C27790017B7CC /* Countries.swift in Sources */,
 				99D2925D255C21D30017B7CC /* ContentView.swift in Sources */,
