@@ -12,11 +12,27 @@ class CountryViewModel: ObservableObject {
     @Published private(set) var country: Country?
     @Published private(set) var capitals: [Capital] = []
     
+    private let networkManager: NetworkManager
     private var allCountries: Countries = []
     var subscriptions: Set<AnyCancellable> = []
     
-    init () {
-        let countries = NetworkManager.retrieveDataWithCombine()
+    init (networkManager: NetworkManager = NetworkManager()) {
+        self.networkManager = networkManager
+        self.retrieveCountryData()
+    }
+    
+    func nextQuestion() {
+        capitals = []
+        setUpQuestion()
+    }
+}
+
+// Mark: Private Functions
+
+extension CountryViewModel {
+    
+    private func retrieveCountryData() {
+        let countries = networkManager.retrieveDataWithCombine()
             .receive(on: DispatchQueue.main)
         
         countries
@@ -33,16 +49,6 @@ class CountryViewModel: ObservableObject {
         })
         .store(in: &subscriptions)
     }
-    
-    func nextQuestion() {
-        capitals = []
-        setUpQuestion()
-    }
-}
-
-// Mark: Private Functions
-
-extension CountryViewModel {
     
     private func setUpQuestion() {
         let randomCountries = selectRandomCountries(countries: allCountries)

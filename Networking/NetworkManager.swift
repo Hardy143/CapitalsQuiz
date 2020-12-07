@@ -10,10 +10,15 @@ import Combine
 
 class NetworkManager {
     
-    static func retrieveDataWithCombine() -> AnyPublisher<[Country], CountryError> {
-        let url = Urls.allCountries
+    private let dataUrl: URL
+    
+    init(dataUrl: URL = Urls.allCountries) {
+        self.dataUrl = dataUrl
+    }
+    
+    func retrieveDataWithCombine() -> AnyPublisher<[Country], CountryError> {
         
-        return URLSession.shared.dataTaskPublisher(for: url)
+        return URLSession.shared.dataTaskPublisher(for: dataUrl)
             .tryMap { response -> Data in
                 guard let httpURLResponse = response.response as? HTTPURLResponse,
                       httpURLResponse.statusCode == 200
