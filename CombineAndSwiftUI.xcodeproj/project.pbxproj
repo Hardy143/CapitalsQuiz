@@ -13,6 +13,7 @@
 		9964B09725767AC200017545 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9964B09625767AC200017545 /* StartView.swift */; };
 		99B0D9CF2579066D009952EB /* CountryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B0D9CE2579066D009952EB /* CountryView.swift */; };
 		99B0D9D625790ACB009952EB /* GameStateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B0D9D525790ACB009952EB /* GameStateController.swift */; };
+		99C129722583757B001A5927 /* Callback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C129712583757B001A5927 /* Callback.swift */; };
 		99D19AB0257954DE00C8F268 /* ScoreViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D19AAF257954DE00C8F268 /* ScoreViewModelTests.swift */; };
 		99D19ACB257E4B3F00C8F268 /* CountryViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D19ACA257E4B3F00C8F268 /* CountryViewModelTests.swift */; };
 		99D29259255C21D30017B7CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D29258255C21D30017B7CC /* AppDelegate.swift */; };
@@ -70,6 +71,7 @@
 		9964B09625767AC200017545 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		99B0D9CE2579066D009952EB /* CountryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryView.swift; sourceTree = "<group>"; };
 		99B0D9D525790ACB009952EB /* GameStateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStateController.swift; sourceTree = "<group>"; };
+		99C129712583757B001A5927 /* Callback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Callback.swift; sourceTree = "<group>"; };
 		99D19AAF257954DE00C8F268 /* ScoreViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewModelTests.swift; sourceTree = "<group>"; };
 		99D19ACA257E4B3F00C8F268 /* CountryViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryViewModelTests.swift; sourceTree = "<group>"; };
 		99D29255255C21D30017B7CC /* CombineAndSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CombineAndSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -139,6 +141,14 @@
 			path = Screens;
 			sourceTree = "<group>";
 		};
+		99C1297025837563001A5927 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				99C129712583757B001A5927 /* Callback.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		99D19AC9257E4B0900C8F268 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +161,7 @@
 		99D2924C255C21D30017B7CC = {
 			isa = PBXGroup;
 			children = (
+				99C1297025837563001A5927 /* Protocols */,
 				99B0D9E525791BCA009952EB /* Screens */,
 				99D3B8552562B9AE00DCAA80 /* Views */,
 				99D292B0255C5DD00017B7CC /* Model */,
@@ -394,6 +405,7 @@
 			files = (
 				990A23C425703A6C00B12628 /* TimerView.swift in Sources */,
 				9964B09725767AC200017545 /* StartView.swift in Sources */,
+				99C129722583757B001A5927 /* Callback.swift in Sources */,
 				99D2929D255C250C0017B7CC /* NetworkManager.swift in Sources */,
 				99B0D9CF2579066D009952EB /* CountryView.swift in Sources */,
 				99D29259255C21D30017B7CC /* AppDelegate.swift in Sources */,

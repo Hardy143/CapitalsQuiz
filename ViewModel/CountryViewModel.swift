@@ -14,7 +14,9 @@ class CountryViewModel: ObservableObject {
     
     private let networkManager: NetworkManager
     private var allCountries: Countries = []
-    var subscriptions: Set<AnyCancellable> = []
+    private var subscriptions: Set<AnyCancellable> = []
+    
+    var delegate: Callback?
     
     init (networkManager: NetworkManager = NetworkManager()) {
         self.networkManager = networkManager
@@ -38,7 +40,9 @@ extension CountryViewModel {
         countries
             .sink(receiveCompletion: { completion in
             switch completion {
-            case .finished: break
+            case .finished:
+                self.delegate?.onDone()
+                break
             case .failure(let error):
                 print(error)
             }
