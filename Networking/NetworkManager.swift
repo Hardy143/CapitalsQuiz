@@ -36,6 +36,6 @@ class NetworkManager {
 }
 
 struct Urls {
-    static let allCountries = URL(string: "https://restcountries.eu/rest/v2/all")!
+    static let allCountries = URL(string: "https://restcountries.com/v2/all")!
     static let mockUrl = URL(string: "https://api.mocki.io/v1/7eaf16f0")!
 }

@@ -8,45 +8,54 @@
 // This file was generated from JSON Schema using quicktype, do not modify it directly.
 // To parse the JSON, add this file to your project and do:
 //
-//   let countries = try? newJSONDecoder().decode(Countries.self, from: jsonData)
+//   let welcome = try? newJSONDecoder().decode(Welcome.self, from: jsonData)
 
 import Foundation
 
-// MARK: - Country
+// MARK: - WelcomeElement
 struct Country: Codable {
-    
     let name: String
     let topLevelDomain: [String]
     let alpha2Code, alpha3Code: String
     let callingCodes: [String]
-    let capital: String
-    let altSpellings: [String]
-    let region: Region
+    let capital: String?
+    let altSpellings: [String]?
     let subregion: String
+    let region: Region
     let population: Int
-    let latlng: [Double]
+    let latlng: [Double]?
     let demonym: String
-    let area, gini: Double?
-    let timezones, borders: [String]
-    let nativeName: String
-    let numericCode: String?
-    let currencies: [Currency]
+    let area: Double?
+    let timezones: [String]
+    let borders: [String]?
+    let nativeName, numericCode: String
+    let flags: Flags
+    let currencies: [Currency]?
     let languages: [Language]
     let translations: Translations
     let flag: String
-    let regionalBlocs: [RegionalBloc]
+    let regionalBlocs: [RegionalBloc]?
     let cioc: String?
+    let independent: Bool
+    let gini: Double?
 }
 
 // MARK: - Currency
 struct Currency: Codable {
-    let code, name, symbol: String?
+    let code, name, symbol: String
+}
+
+// MARK: - Flags
+struct Flags: Codable {
+    let svg: String
+    let png: String
 }
 
 // MARK: - Language
 struct Language: Codable {
     let iso6391: String?
-    let iso6392, name, nativeName: String
+    let iso6392, name: String
+    let nativeName: String?
 
     enum CodingKeys: String, CodingKey {
         case iso6391 = "iso639_1"
@@ -58,8 +67,9 @@ struct Language: Codable {
 enum Region: String, Codable {
     case africa = "Africa"
     case americas = "Americas"
+    case antarctic = "Antarctic"
+    case antarcticOcean = "Antarctic Ocean"
     case asia = "Asia"
-    case empty = ""
     case europe = "Europe"
     case oceania = "Oceania"
     case polar = "Polar"
@@ -69,8 +79,8 @@ enum Region: String, Codable {
 struct RegionalBloc: Codable {
     let acronym: Acronym
     let name: Name
-    let otherAcronyms: [OtherAcronym]
-    let otherNames: [OtherName]
+    let otherNames: [OtherName]?
+    let otherAcronyms: [OtherAcronym]?
 }
 
 enum Acronym: String, Codable {
@@ -137,11 +147,10 @@ enum OtherName: String, Codable {
 
 // MARK: - Translations
 struct Translations: Codable {
-    let de, es, fr, ja: String?
-    let it: String?
-    let br, pt: String
-    let nl, hr: String?
-    let fa: String
+    let br, pt, nl, hr: String
+    let fa: String?
+    let de, es, fr, ja: String
+    let it, hu: String
 }
 
 typealias Countries = [Country]

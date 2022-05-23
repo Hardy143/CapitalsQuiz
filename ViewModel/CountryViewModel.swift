@@ -82,7 +82,7 @@ extension CountryViewModel {
         let shuffledCountries = randomCountries.shuffled()
         
         for country in shuffledCountries {
-            let capital = Capital(name: country.capital, isChecked: false)
+            let capital = Capital(name: country.capital ?? "", isChecked: false)
             self.capitals.append(capital)
         }
     }
